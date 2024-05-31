@@ -8,7 +8,10 @@
 <ul>
     <h3>Encuestas</h3>
     {% for q in questions %}
-    <li><a href="{% url 'polls:vote' q.id %}">{{ q.question_text }}</a></li>
+    <li>
+        <a href="{% url 'polls:vote' q.id %}">{{ q.question_text }}</a>
+        <a href="{% url 'polls:results' q.id %}">--Resultados</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}
